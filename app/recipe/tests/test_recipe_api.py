@@ -96,7 +96,7 @@ class PrivateRecipeApiTests(TestCase):
         Test retrieveing a list of recipes
         '''
         sample_recipe(user=self.user)
-        sample_recipe(user=self.user, title='second recipe')
+        sample_recipe(user=self.user)
 
         res = self.client.get(RECIPES_URL)
 
@@ -114,7 +114,7 @@ class PrivateRecipeApiTests(TestCase):
             'testpassword'
         )
         sample_recipe(user=user2)
-        sample_recipe(user=self.user, title='second recipe')
+        sample_recipe(user=self.user)
 
         res = self.client.get(RECIPES_URL)
 
